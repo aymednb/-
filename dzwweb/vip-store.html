@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Store - DZ WORLD ROLEPLAY</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .vip-packages {
+            padding: 8rem 1rem 4rem;
+        }
+
+        .packages-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .package-card {
+            background-color: var(--surface-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .package-features li::before {
+            content: "✓";
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DZ WORLD RP</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="vip-store.html" class="active">VIP Store</a>
+                <a href="rules.html">Rules</a>
+                <a href="whitelist.html">Whitelist</a>
+                <a href="staff.html">Staff</a>
+                <a href="news.html">News</a>
+                <button id="languageToggle" class="lang-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                    <span id="langText">EN</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="vip-packages">
+            <div class="packages-grid">
+                <div class="package-card" data-aos="fade-up">
+                    <h3 class="package-name">Bronze VIP</h3>
+                    <div class="package-price">$9.99</div>
+                    <ul class="package-features">
+        
+                    </ul>
+                    <a href="https://discord.gg/nqGcfDfZ" class="buy-button" data-package="bronze">Purchase Bronze</a>
+                </div>
+
+                <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="package-name">Silver VIP</h3>
+                    <div class="package-price">$19.99</div>
+                    <ul class="package-features">
+
+                    </ul>
+                    <a href="https://discord.gg/nqGcfDfZ" class="buy-button" data-package="silver">Purchase Silver</a>
+                </div>
+
+                <div class="package-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="package-name">Gold VIP</h3>
+                    <div class="package-price">$29.99</div>
+                    <ul class="package-features">
+
+                    </ul>
+                    <a href="https://discord.gg/nqGcfDfZ" class="buy-button" data-package="gold">Purchase Gold</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>DZ WORLD RP</h4>
+                <p>The ultimate FiveM roleplay experience</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="rules.html">Rules</a>
+                <a href="whitelist.html">Whitelist</a>
+                <a href="https://discord.gg/nqGcfDfZ" target="_blank">Discord</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DZ WORLD ROLEPLAY. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
