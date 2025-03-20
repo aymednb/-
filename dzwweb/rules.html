@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+  /* Snowfall Animation */
+  @keyframes snowfall {
+            0% {
+                transform: translateY(-10%);
+            }
+            100% {
+                transform: translateY(110vh);
+            }
+        }
+
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .snowflake {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snowfall linear infinite;
+        }
+
+        /* Green Theme */
+        body {
+            background-color: #1a2e1a; /* Dark green background */
+            color: #e0f7e0; /* Light green text */
+        }
+
         .rules-section {
             padding: 8rem 1rem 4rem;
             max-width: 1280px;
@@ -14,22 +48,15 @@
         }
 
         .rules-container {
-            background-color: var(--surface-light);
+            background-color: #2d4a2d; /* Medium green container */
             border-radius: 1rem;
             padding: 2rem;
             margin: 2rem;
         }
 
-        .rule-category {
-            margin-bottom: 2rem;
-        }
-
         .rule-category h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary);
+            color: #4caf50; /* Bright green for headings */
+            border-bottom: 2px solid #4caf50;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -45,7 +72,6 @@
         }
 
         .rule-list {
-            list-style: none;
             display: none;
         }
 
@@ -56,7 +82,7 @@
         .rule-item {
             margin-bottom: 1rem;
             padding: 1rem;
-            background-color: var(--surface);
+            background-color: #3b5a3b; /* Darker green for rule items */
             border-radius: 0.5rem;
             transition: transform 0.3s ease;
         }
@@ -67,16 +93,46 @@
 
         .rule-title {
             font-weight: bold;
-            color: var(--text);
+            color: #e0f7e0; /* Light green for titles */
             margin-bottom: 0.5rem;
         }
 
         .rule-description {
-            color: var(--text-secondary);
+            color: #c8e6c9; /* Lighter green for descriptions */
+        }
+
+        .navbar, .footer {
+            background-color: #1a2e1a; /* Dark green for navbar and footer */
+        }
+
+        .nav-links a, .footer a {
+            color: #e0f7e0; /* Light green for links */
+        }
+
+        .nav-links a:hover, .footer a:hover {
+            color: #4caf50; /* Bright green on hover */
+        }
+
+        .footer-bottom {
+            background-color: #1a2e1a; /* Dark green for footer bottom */
+            color: #e0f7e0; /* Light green text */
         }
     </style>
 </head>
 <body>
+    <div class="snow">
+        <!-- Add multiple snowflakes -->
+        <div class="snowflake" style="left: 5%; animation-duration: 10s; width: 8px; height: 8px;"></div>
+        <div class="snowflake" style="left: 15%; animation-duration: 12s; width: 6px; height: 6px;"></div>
+        <div class="snowflake" style="left: 25%; animation-duration: 8s; width: 10px; height: 10px;"></div>
+        <div class="snowflake" style="left: 35%; animation-duration: 14s; width: 7px; height: 7px;"></div>
+        <div class="snowflake" style="left: 45%; animation-duration: 9s; width: 5px; height: 5px;"></div>
+        <div class="snowflake" style="left: 55%; animation-duration: 11s; width: 8px; height: 8px;"></div>
+        <div class="snowflake" style="left: 65%; animation-duration: 13s; width: 6px; height: 6px;"></div>
+        <div class="snowflake" style="left: 75%; animation-duration: 7s; width: 9px; height: 9px;"></div>
+        <div class="snowflake" style="left: 85%; animation-duration: 10s; width: 7px; height: 7px;"></div>
+        <div class="snowflake" style="left: 95%; animation-duration: 12s; width: 5px; height: 5px;"></div>
+    </div>
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">DZ WORLD RP</a>
@@ -273,22 +329,148 @@
                 <!-- Communication Rules -->
                 <div class="rule-category" data-aos="fade-up" data-aos-delay="200">
                     <h2 onclick="toggleRules('communication-rules')">
-                        Communication Rules
+                        قوانين السطو
                         <span class="arrow">&#9660;</span>
                     </h2>
                     <ul class="rule-list" id="communication-rules">
                         <li class="rule-item">
-                            <div class="rule-title">1. Use Appropriate Language</div>
-                            <div class="rule-description">No excessive swearing, hate speech, or inappropriate content.</div>
+                            <div class="rule-title">
+                                قوانين سرقة ماكينة الصراف الآلي أقصى     
+                            </div>
+                            <div class="rule-description">
+                                .  عدد أفراد العصابة في سرقة ماكينة الصراف الآلي 1-2 <br>
+                                
+                                .  يسمح بإستعمال الأساحة الخفيفة  <br>
+                                .	يمنع السرقة إلا في وجود 4 أفراد شرطة على الأقل. <br>
+                                .في حالة التفاوض  يسمح باستخدام سيارة واحدة <br>
+
+
+
+
+
+                            </div>
                         </li>
                         <li class="rule-item">
-                            <div class="rule-title">2. Proper Radio Usage</div>
-                            <div class="rule-description">Use radio channels appropriately and maintain radio discipline.</div>
+                            <div class="rule-title"> قوانين السطو على البقالة </div>
+                            <div class="rule-description">
+                                .	عدد أفراد العصابة في سرقة البقالة هو 1-2-3 أشخاص كحد أقصى وعدد الشرطة 4    <br>
+                                .   يمنع السرقة إلا في وجود 4 أفراد شرطة على الأقل     <br>
+                                .  في حالة التفاوض  يسمح باستخدام سيارة واحدة    <br>
+                                . ممنوع استعمال الدراجة النارية    <br>
+                                . يعتبر المواطن الاصلي الموجود في الداخل رهينة      <br>
+                                
+
+
+
+
+
+
+
+                            </div>
                         </li>
                         <li class="rule-item">
-                            <div class="rule-title">3. No Metagaming</div>
-                            <div class="rule-description">Using out-of-character information in-game is strictly prohibited.</div>
+                            <div class="rule-title">سرقة المنزل </div>
+                            <div class="rule-description">
+                            .	يسمح بإستعمال الأسلحة الخفيفة <br>
+                            . عدد المجرمين 1-2 عدد افراد الشرطة 4   <br>
+                            . في حالة التفاوض  يسمح باستخدام سيارة واحدة  <br>
+                            . 	يمنع السرقة إلا في وجود 4 أفراد شرطة على الأقل <br>
+                            . التفاوض يكون خارج المنزل <br>
+                            . في حالة عدم  وجود مجرمين خارج المنزل يحق للشرطة الاقتحام <br>
+                            . يعتبر المواطن الاصلي الموجود في الداخل رهينة     <br>
+
+
+                            </div>
                         </li>
+                        <li class="rule-item">
+                            <div class="rule-title">(Fleeca + Laundromat+ cashexchange ) سرقة البنك  الصغير</div>
+                            <div class="rule-description">
+                                . عدد المجرمين هو 4 عدد الشرطة 6  <br>
+                                . 	يسمح بإستعمال الأسلحة الخفيفة او الثقيلة  <br>
+                                . يسمح باستخدام 2 سيارات للمجرمين   <br> 
+                                .ممنوع القتال داخل البنك الصغير  <br> 
+                                . يجب احظار حقيبة واحدة علا الاقل اثناء السرقة  <br> 
+                                . يعتبر المواطن الاصلي الموجود في الداخل رهينة    <br>
+                                . ممنوع استعمال الدراجة النارية   <br>
+                                
+
+
+
+
+                            </div>
+                        </li>
+                        <li class="rule-item">
+                            <div class="rule-title">(Palito)سرقة بنك باليتو </div>
+                            <div class="rule-description">
+
+                             . عدد المجرمين هو 5-6 عدد الشرطة 6-8<br>
+                             . يجب احظار حقيبة واحدة علا الاقل اثناء السرقة  <br>
+                             . يجب استعمال الاسلحة الثقيلة  <br>
+                             . يسمح باستخدام 2 سيارات للمجرمين  <br>
+                             . يجب اختطاف مواطن ليكون رهينة <br>
+                             . الهيلكوبتر لا تشارك في القتال <br>
+                            
+  
+
+
+
+                            </div>
+                        </li>
+                        <li class="rule-item">
+                            <div class="rule-title"> (pacific) سرقة بنك المركزي </div>
+                            <div class="rule-description">
+
+                             . عدد المجرمين 7-8 عدد الشرطة 9-10   <br>
+                             . يجب احظار حقيبة واحدة علا الاقل اثناء السرقة   <br>
+                             . يسمح باستخدام 3 سيارات للمجرمين   <br> 
+                             . يجب اختطاف مواطن ليكون رهينة <br> 
+                             . يجب استعمال الاسلحة الثقيلة  <br>
+                             . الهيلكوبتر لا تشارك في القتال <br>
+                             
+                            
+  
+
+
+
+                            </div>
+                        </li>
+                        
+                        <li class="rule-item">
+                            <div class="rule-title">(casino) سرقة الكازينو </div>
+                            <div class="rule-description">
+                            .  عدد المجرمين 8  عدد الشرطة10<br>
+                            . يجب احظار حقيبة واحدة علا الاقل اثناء السرقة <br>
+                            . يسمح باستخدام 3 سيارات للمجرمين  <br>
+                            . يجب اختطاف مواطن ليكون رهينة <br>
+                            . يجب استعمال الاسلحة الثقيلة  <br>
+                            
+                             
+                            
+  
+
+
+
+                            </div>
+                        </li>
+                        <li class="rule-item">
+                            <div class="rule-title">(Artasylum) سرقة المتحف </div>
+                            <div class="rule-description">
+                            . عدد المجرمين 7-8 عدد الشرطة 9-10  <br>
+                            . يجب احظار حقيبة واحدة علا الاقل اثناء السرقة  <br>
+                            . يسمح باستخدام 3 سيارات للمجرمين  <br>
+                            . يجب اختطاف مواطن ليكون رهينة <br>
+                            . يجب استعمال الاسلحة الثقيلة  <br>
+                            
+                            
+                             
+                            
+  
+
+
+
+                            </div>
+                        </li>
+                       
                     </ul>
                 </div>
                     </ul>
