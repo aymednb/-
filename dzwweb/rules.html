@@ -30,10 +30,27 @@
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .rule-category h2 .arrow {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .rule-category h2 .arrow.down {
+            transform: rotate(90deg);
         }
 
         .rule-list {
             list-style: none;
+            display: none;
+        }
+
+        .rule-list.open {
+            display: block;
         }
 
         .rule-item {
@@ -84,42 +101,46 @@
     <main>
         <section class="rules-section">
             <div class="rules-container">
+                <!-- General Rules -->
                 <div class="rule-category" data-aos="fade-up">
-                    <h2>القوانين العامة</h2>
-                    <ul class="rule-list">
+                    <h2 onclick="toggleRules('general-rules')">
+                        القوانين العامة
+                        <span class="arrow">&#9660;</span>
+                    </h2>
+                    <ul class="rule-list" id="general-rules">
                         <li class="rule-item">
                             <div class="rule-title">التقمص الجيد للشخصية (Good Roleplay - GRP)</div>
                             <div class="rule-description">
-                                :performing_arts: يجب أن تتصرف كما لو كنت الشخصية التي تلعبها في العالم الافتراضي.<br>
-                                :x: تجنب الأفعال التي لا تناسب شخصيتك أو السياق العام للعبة.
+                                 يجب أن تتصرف كما لو كنت الشخصية التي تلعبها في العالم الافتراضي.<br>
+                               تجنب الأفعال التي لا تناسب شخصيتك أو السياق العام للعبة.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">عدم الخروج عن الدور (No Out of Character - No OOC)</div>
                             <div class="rule-description">
-                                :no_entry_sign: :x: لا تستخدم معلومات خارجية (معلومات تعرفها أنت كلاعب ولكن شخصيتك لا تعرفها).<br>
-                                :x: لا تتحدث بلغة غير مناسبة للعالم الافتراضي (مثل الحديث عن أشياء خارج اللعبة).
+                                 لا تستخدم معلومات خارجية (معلومات تعرفها أنت كلاعب ولكن شخصيتك لا تعرفها).<br>
+                                لا تتحدث بلغة غير مناسبة للعالم الافتراضي (مثل الحديث عن أشياء خارج اللعبة).
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">عدم الاستفزاز (No Power Gaming - No PG)</div>
                             <div class="rule-description">
-                                :crossed_swords: :x: لا تجبر اللاعبين الآخرين على أفعال معينة دون إعطائهم خيار الرد أو التفاعل.<br>
-                                :handshake: اترك مساحة للتفاعل الطبيعي بين الشخصيات.
+                                 لا تجبر اللاعبين الآخرين على أفعال معينة دون إعطائهم خيار الرد أو التفاعل.<br>
+                                 اترك مساحة للتفاعل الطبيعي بين الشخصيات.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">عدم القتل العشوائي (No Random Death Match - No RDM)</div>
                             <div class="rule-description">
-                                :gun: :x: لا تقتل أو تهاجم لاعبين آخرين دون سبب منطقي داخل عالم اللعبة.<br>
-                                :white_check_mark: يجب أن يكون هناك سبب مقنع للتفاعلات العنيفة.
+                                 لا تقتل أو تهاجم لاعبين آخرين دون سبب منطقي داخل عالم اللعبة.<br>
+                                 يجب أن يكون هناك سبب مقنع للتفاعلات العنيفة.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">عدم السرقة العشوائية (No Random Robbery - No RRB)</div>
                             <div class="rule-description">
-                                :rotating_light: :x: لا تسرق لاعبين آخرين دون سبب أو تفاعل مسبق.<br>
-                                :white_check_mark: السرقة يجب أن تكون مبررة في سياق القصة.
+                                 لا تسرق لاعبين آخرين دون سبب أو تفاعل مسبق.<br>
+                                 السرقة يجب أن تكون مبررة في سياق القصة.
                             </div>
                         </li>
                         <li class="rule-item">
@@ -132,22 +153,22 @@
                         <li class="rule-item">
                             <div class="rule-title">عدم استخدام الغش أو التعديلات (No Cheating or Modding)</div>
                             <div class="rule-description">
-                                :octagonal_sign: :x: استخدام الغش أو التعديلات غير المسموح بها يُعتبر مخالفًا للقوانين.<br>
-                                :white_check_mark: حافظ على عدالة اللعبة للجميع.
+                                 استخدام الغش أو التعديلات غير المسموح بها يُعتبر مخالفًا للقوانين.<br>
+                                 حافظ على عدالة اللعبة للجميع.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">التفاعل الواقعي (Realistic Interaction)</div>
                             <div class="rule-description">
-                                :earth_africa: :white_check_mark: التفاعلات يجب أن تكون واقعية ومنطقية.<br>
-                                :x: تجنب القفز من الأماكن العالية أو القيام بأفعال غير واقعية.
+                                 التفاعلات يجب أن تكون واقعية ومنطقية.<br>
+                                 تجنب القفز من الأماكن العالية أو القيام بأفعال غير واقعية.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">عدم التمييز أو الإساءة (No Discrimination or Harassment)</div>
                             <div class="rule-description">
-                                :man_gesturing_no: :x: لا تسمح بالإساءة أو التمييز ضد اللاعبين الآخرين بسبب العرق، الجنس، الدين، أو أي سبب آخر.<br>
-                                :white_check_mark: حافظ على بيئة لعب محترمة.
+                                 لا تسمح بالإساءة أو التمييز ضد اللاعبين الآخرين بسبب العرق، الجنس، الدين، أو أي سبب آخر.<br>
+                                 حافظ على بيئة لعب محترمة.
                             </div>
                         </li>
                         <li class="rule-item">
@@ -160,44 +181,48 @@
                         <li class="rule-item">
                             <div class="rule-title">عدم التخريب (No Griefing)</div>
                             <div class="rule-description">
-                                :construction: :x: لا تقم بتخريب تجربة اللاعبين الآخرين عن عمد.<br>
-                                :white_check_mark: حافظ على جو تعاوني وممتع للجميع.
+                                 لا تقم بتخريب تجربة اللاعبين الآخرين عن عمد.<br>
+                                 حافظ على جو تعاوني وممتع للجميع.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">التواصل الجيد (Good Communication)</div>
                             <div class="rule-description">
-                                :speaking_head: :white_check_mark: استخدم الدردشة الصوتية أو النصية بشكل مناسب للتفاعل مع الآخرين.<br>
-                                :white_check_mark: إذا كنت تواجه مشكلة، حاول التواصل مع الإدارة بدلًا من التصرف بشكل فردي.
+                                 :white_check_mark: استخدم الدردشة الصوتية أو النصية بشكل مناسب للتفاعل مع الآخرين.<br>
+                                 إذا كنت تواجه مشكلة، حاول التواصل مع الإدارة بدلًا من التصرف بشكل فردي.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">عدم التلاعب بالأنظمة (No Meta-Gaming)</div>
                             <div class="rule-description">
-                                :man_detective: :x: لا تستخدم معلومات خارجية (مثل معلومات من الدردشة الصوتية أو النصية خارج اللعبة) لصالح شخصيتك.<br>
-                                :white_check_mark: حافظ على فصل واضح بين العالم الحقيقي والعالم الافتراضي.
+                                 لا تستخدم معلومات خارجية (مثل معلومات من الدردشة الصوتية أو النصية خارج اللعبة) لصالح شخصيتك.<br>
+                                 حافظ على فصل واضح بين العالم الحقيقي والعالم الافتراضي.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">الالتزام بالزي الرسمي (Proper Attire)</div>
                             <div class="rule-description">
-                                :necktie: في بعض سيرفرات الرولبلاي، يُطلب منك ارتداء ملابس تناسب شخصيتك أو وظيفتك.<br>
-                                :white_check_mark: تأكد من الالتزام بهذه القواعد.
+                                 في بعض سيرفرات الرولبلاي، يُطلب منك ارتداء ملابس تناسب شخصيتك أو وظيفتك.<br>
+                                 تأكد من الالتزام بهذه القواعد.
                             </div>
                         </li>
                         <li class="rule-item">
                             <div class="rule-title">عدم التطفل (No Fear Roleplay - No FRP)</div>
                             <div class="rule-description">
-                                :no_pedestrians: :x: لا تتدخل في تفاعلات الآخرين دون سبب منطقي.<br>
-                                :white_check_mark: اترك للاعبين الآخرين مساحة للتفاعل بحرية.
+                                 لا تتدخل في تفاعلات الآخرين دون سبب منطقي.<br>
+                                 اترك للاعبين الآخرين مساحة للتفاعل بحرية.
                             </div>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Criminal Activities Rules -->
                 <div class="rule-category" data-aos="fade-up" data-aos-delay="100">
-                    <h2>قوانين الأعمال الإجرامية</h2>
-                    <ul class="rule-list">
+                    <h2 onclick="toggleRules('crime-rules')">
+                        قوانين الأعمال الإجرامية
+                        <span class="arrow">&#9660;</span>
+                    </h2>
+                    <ul class="rule-list" id="crime-rules">
                         <li class="rule-item">
                             <div class="rule-title">النهب</div>
                             <div class="rule-description">
@@ -245,9 +270,13 @@
                     </ul>
                 </div>
 
+                <!-- Communication Rules -->
                 <div class="rule-category" data-aos="fade-up" data-aos-delay="200">
-                    <h2>Communication Rules</h2>
-                    <ul class="rule-list">
+                    <h2 onclick="toggleRules('communication-rules')">
+                        Communication Rules
+                        <span class="arrow">&#9660;</span>
+                    </h2>
+                    <ul class="rule-list" id="communication-rules">
                         <li class="rule-item">
                             <div class="rule-title">1. Use Appropriate Language</div>
                             <div class="rule-description">No excessive swearing, hate speech, or inappropriate content.</div>
@@ -259,6 +288,40 @@
                         <li class="rule-item">
                             <div class="rule-title">3. No Metagaming</div>
                             <div class="rule-description">Using out-of-character information in-game is strictly prohibited.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Animation Rules -->
+                <div class="rule-category" data-aos="fade-up" data-aos-delay="300">
+                    <h2 onclick="toggleRules('animation-rules')">
+                        قوانين الأنيميشن (Animations)
+                        <span class="arrow">&#9660;</span>
+                    </h2>
+                    <ul class="rule-list" id="animation-rules">
+                        <li class="rule-item">
+                            <div class="rule-title">1. استخدام الأنيميشن المناسب</div>
+                            <div class="rule-description">
+                                يجب استخدام الأنيميشن المناسب للسياق. على سبيل المثال، لا تستخدم أنيميشن الرقص أثناء وجودك في موقف خطير.
+                            </div>
+                        </li>
+                        <li class="rule-item">
+                            <div class="rule-title">2. عدم إساءة استخدام الأنيميشن</div>
+                            <div class="rule-description">
+                                لا تستخدم الأنيميشن لإعاقة اللاعبين الآخرين أو للتسبب في إزعاجهم.
+                            </div>
+                        </li>
+                        <li class="rule-item">
+                            <div class="rule-title">3. الأنيميشن الواقعي</div>
+                            <div class="rule-description">
+                                يجب أن تكون الأنيميشنات واقعية ومنطقية. تجنب استخدام أنيميشنات غير واقعية مثل الطيران أو الاختفاء.
+                            </div>
+                        </li>
+                        <li class="rule-item">
+                            <div class="rule-title">4. الأنيميشن في المناطق الآمنة</div>
+                            <div class="rule-description">
+                                يُسمح باستخدام الأنيميشن في المناطق الآمنة فقط إذا كان لا يتعارض مع قواعد السيرفر.
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -285,8 +348,15 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/translations.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        function toggleRules(id) {
+            const ruleList = document.getElementById(id);
+            const arrow = ruleList.previousElementSibling.querySelector('.arrow');
+            ruleList.classList.toggle('open');
+            arrow.classList.toggle('down');
+        }
+
+        AOS.init();
+    </script>
 </body>
 </html>
